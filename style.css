@@ -1,33 +1,34 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #fafafa;
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-form {
-  margin-bottom: 20px;
+.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+button {
+  margin: 10px 0;
   padding: 10px;
-  background-color: #e3f2fd;
-  border-radius: 8px;
+  cursor: pointer;
 }
 
-label {
+.faq-answer {
+  display: none;
+  margin: 5px 0 15px;
+}
+
+.faq-answer.visible {
   display: block;
-  margin-top: 10px;
 }
 
-input, select, button {
-  margin-top: 5px;
+input {
+  display: block;
+  margin: 10px 0;
   padding: 8px;
   width: 100%;
   box-sizing: border-box;
-}
-
-section {
-  margin-top: 20px;
-}
-
-#moodList li {
-  padding: 5px;
-  transition: background-color 0.3s ease;
 }
