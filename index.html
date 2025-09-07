@@ -2,41 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mood Tracker</title>
+  <title>Interactive Web App</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Mood Tracker</h1>
+  <h1>Welcome to My Interactive Page</h1>
 
-  <!-- Mood Submission Form -->
-  <form id="moodForm">
-    <label for="username">Name:</label>
-    <input type="text" id="username" placeholder="Enter your name">
+  <!-- Light/Dark Mode Toggle -->
+  <button id="themeToggle">Toggle Light/Dark Mode</button>
 
-    <label for="mood">Mood:</label>
-    <select id="mood">
-      <option value="">Select mood</option>
-      <option value="happy">😊 Happy</option>
-      <option value="sad">😢 Sad</option>
-      <option value="angry">😠 Angry</option>
-      <option value="calm">😌 Calm</option>
-    </select>
+  <!-- Collapsible FAQ Section -->
+  <section id="faq">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <button class="faq-question">What is this page about?</button>
+      <div class="faq-answer">It's a demo of JavaScript interactivity and validation.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">How does the form work?</button>
+      <div class="faq-answer">It validates your input using custom JavaScript logic.</div>
+    </div>
+  </section>
 
-    <button type="submit">Submit Mood</button>
+  <!-- Form Section -->
+  <form id="signupForm">
+    <h2>Sign Up</h2>
+    <input type="text" id="name" placeholder="Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button type="submit">Submit</button>
+    <p id="formFeedback"></p>
   </form>
-
-  <!-- Interactive Section 1: Mood History -->
-  <section id="history">
-    <h2>Mood History</h2>
-    <ul id="moodList"></ul>
-  </section>
-
-  <!-- Interactive Section 2: Mood Slider -->
-  <section id="sliderSection">
-    <h2>Rate Your Day</h2>
-    <input type="range" id="daySlider" min="0" max="10" value="5">
-    <p>Rating: <span id="sliderValue">5</span>/10</p>
-  </section>
 
   <script src="script.js"></script>
 </body>
