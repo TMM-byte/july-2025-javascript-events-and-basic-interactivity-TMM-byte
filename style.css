@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #fafafa;
+}
+
+form {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #e3f2fd;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, button {
+  margin-top: 5px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+section {
+  margin-top: 20px;
+}
+
+#moodList li {
+  padding: 5px;
+  transition: background-color 0.3s ease;
+}
