@@ -1,47 +1,51 @@
-// Event listener for form submission
-document.getElementById("moodForm").addEventListener("submit", function(e) {
-  e.preventDefault(); // Prevent default form behavior
+// 🌗 Toggle Light/Dark Mode
+document.getElementById("themeToggle").addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
 
-  const name = document.getElementById("username").value.trim();
-  const mood = document.getElementById("mood").value;
+// 📂 Collapsible FAQ Section
+const faqButtons = document.querySelectorAll(".faq-question");
+faqButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const answer = button.nextElementSibling;
+    answer.classList.toggle("visible");
+  });
+});
 
-  // Custom validation logic
+// 🧪 Custom Form Validation
+document.getElementById("signupForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // Prevent default form submission
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  const feedback = document.getElementById("formFeedback");
+
+  let errors = [];
+
+  // Name validation
   if (name === "") {
-    alert("Please enter your name.");
-    return;
-  }
-  if (mood === "") {
-    alert("Please select a mood.");
-    return;
+    errors.push("Name is required.");
   }
 
-  // Add mood entry to history
-  const moodList = document.getElementById("moodList");
-  const entry = document.createElement("li");
-  entry.textContent = `${name} feels ${mood}`;
-  moodList.appendChild(entry);
-
-  // Clear form
-  document.getElementById("username").value = "";
-  document.getElementById("mood").value = "";
-});
-
-// Interactive Feature 1: Live slider update
-const slider = document.getElementById("daySlider");
-const sliderValue = document.getElementById("sliderValue");
-
-slider.addEventListener("input", function() {
-  sliderValue.textContent = slider.value;
-});
-
-// Interactive Feature 2: Highlight mood history on hover
-document.getElementById("moodList").addEventListener("mouseover", function(e) {
-  if (e.target.tagName === "LI") {
-    e.target.style.backgroundColor = "#f0f8ff";
+  // Email validation using regex
+  const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  if (!emailPattern.test(email)) {
+    errors.push("Invalid email format.");
   }
-});
-document.getElementById("moodList").addEventListener("mouseout", function(e) {
-  if (e.target.tagName === "LI") {
-    e.target.style.backgroundColor = "";
+
+  // Password validation
+  if (password.length < 6) {
+    errors.push("Password must be at least 6 characters.");
+  }
+
+  // Show feedback
+  if (errors.length > 0) {
+    feedback.textContent = errors.join(" ");
+    feedback.style.color = "red";
+  } else {
+    feedback.textContent = "Form submitted successfully!";
+    feedback.style.color = "green";
+    this.reset();
   }
 });
