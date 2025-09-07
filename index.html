@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mood Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Mood Tracker</h1>
+
+  <!-- Mood Submission Form -->
+  <form id="moodForm">
+    <label for="username">Name:</label>
+    <input type="text" id="username" placeholder="Enter your name">
+
+    <label for="mood">Mood:</label>
+    <select id="mood">
+      <option value="">Select mood</option>
+      <option value="happy">😊 Happy</option>
+      <option value="sad">😢 Sad</option>
+      <option value="angry">😠 Angry</option>
+      <option value="calm">😌 Calm</option>
+    </select>
+
+    <button type="submit">Submit Mood</button>
+  </form>
+
+  <!-- Interactive Section 1: Mood History -->
+  <section id="history">
+    <h2>Mood History</h2>
+    <ul id="moodList"></ul>
+  </section>
+
+  <!-- Interactive Section 2: Mood Slider -->
+  <section id="sliderSection">
+    <h2>Rate Your Day</h2>
+    <input type="range" id="daySlider" min="0" max="10" value="5">
+    <p>Rating: <span id="sliderValue">5</span>/10</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
